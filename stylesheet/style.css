@@ -1,0 +1,119 @@
+/* universal selector */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+body {
+    background-color: whitesmoke;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+
+/* fonts */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+
+/* heading */
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: #30ba98;
+    color: white;
+    border-bottom: 2px solid #000000;
+}
+
+/* images */
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    gap: 3rem;
+}
+
+.rock,
+.paper,
+.scissor {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: box-shadow 0.3s ease;
+}
+
+.rock {
+    background-image: url("/assets/images/rock.png");
+}
+
+.paper {
+    background-image: url("/assets/images/paper.png");
+}
+
+.scissor {
+    background-image: url("/assets/images/siscor.png");
+}
+
+.rock:hover,
+.paper:hover,
+.scissor:hover {
+    box-shadow: 0 0 0 10px #003a66;
+    cursor: pointer;
+}
+
+/* score board */
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    width: 100vw;
+    gap: 3rem;
+}
+
+.score {
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* win and loose msg */
+
+
+.msg-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 100vw;
+    font-size: 2rem;
+}
+
+#msg {
+    background-color: #003a66;
+    display: inline;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: default;
+}
