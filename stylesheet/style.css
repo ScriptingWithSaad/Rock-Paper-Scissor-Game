@@ -59,15 +59,15 @@ body {
 }
 
 .rock {
-    background-image: url("../assets/images/rock.png");
+    background-image: url(../assets/images/rock.png);
 }
 
 .paper {
-    background-image: url("../assets/images/paper.png");
+    background-image: url(../assets/images/paper.png);
 }
 
 .scissor {
-    background-image: url("../assets/images/siscor.png");
+    background-image: url(../assets/images/siscor.png);
 }
 
 .rock:hover,
