@@ -47,13 +47,23 @@ body {
 .rock,
 .paper,
 .scissor {
-    height: clamp(100px, 25vw, 150px);
+    position: relative;
     width: clamp(100px, 25vw, 150px);
+    aspect-ratio: 1/1; 
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     transition: box-shadow 0.3s ease;
+}
+
+/* Using pseudo-element to maintain aspect ratio */
+.rock::after,
+.paper::after,
+.scissor::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%; 
 }
 
 .rock {
@@ -123,16 +133,23 @@ body {
         min-height: 40vh;
     }
     
+    .rock,
+    .paper,
+    .scissor {
+        width: clamp(80px, 20vw, 120px); 
+    }
+    
     .rock:hover,
     .paper:hover,
     .scissor:hover {
-        box-shadow: none; /* Remove hover effect on touch devices */
+        box-shadow: none; 
     }
     
     .rock:active,
     .paper:active,
     .scissor:active {
-        box-shadow: 0 0 0 5px #003a66; /* Add active state for touch devices */
+        box-shadow: 0 0 0 5px #003a66; 
+        transform: scale(0.95); 
     }
 }
 
@@ -144,6 +161,7 @@ body {
     .content {
         min-height: 35vh;
         gap: 1rem;
+        padding: 1rem;
     }
     
     .score-board {
@@ -163,5 +181,11 @@ body {
     
     .msg-container {
         min-height: 20vh;
+    }
+    
+    .rock,
+    .paper,
+    .scissor {
+        width: clamp(60px, 15vw, 100px); 
     }
 }
