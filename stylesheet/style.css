@@ -1,11 +1,9 @@
 /* universal selector */
-
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-
-
 
 body {
     background-color: whitesmoke;
@@ -13,44 +11,44 @@ body {
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-
 /* fonts */
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
-
 /* heading */
-
 .heading {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
-    width: 100vw;
+    min-height: 10vh;
+    width: 100%;
     background-color: #30ba98;
     color: white;
     border-bottom: 2px solid #000000;
+    padding: 1rem;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 /* images */
-
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    gap: 3rem;
+    flex-wrap: wrap;
+    min-height: 50vh;
+    gap: clamp(1rem, 3vw, 3rem);
+    padding: 2rem;
 }
 
 .rock,
 .paper,
 .scissor {
-    height: 150px;
-    width: 150px;
+    height: clamp(100px, 25vw, 150px);
+    width: clamp(100px, 25vw, 150px);
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,47 +71,97 @@ body {
 .rock:hover,
 .paper:hover,
 .scissor:hover {
-    box-shadow: 0 0 0 10px #003a66;
+    box-shadow: 0 0 0 clamp(5px, 2vw, 10px) #003a66;
     cursor: pointer;
 }
 
 /* score board */
-
 .score-board {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 8vh;
-    width: 100vw;
-    gap: 3rem;
+    min-height: 8vh;
+    width: 100%;
+    gap: clamp(1rem, 3vw, 3rem);
+    padding: 1rem;
 }
 
 .score {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
-
 /* win and loose msg */
-
-
 .msg-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25vh;
-    width: 100vw;
-    font-size: 2rem;
+    min-height: 25vh;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
 }
 
 #msg {
     background-color: #003a66;
-    display: inline;
     color: #fff;
-    padding: 5px 15px;
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
     border-radius: 5px;
     cursor: default;
+    font-size: clamp(1rem, 4vw, 2rem);
+    word-wrap: break-word;
+    max-width: 90%;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .content {
+        min-height: 40vh;
+    }
+    
+    .rock:hover,
+    .paper:hover,
+    .scissor:hover {
+        box-shadow: none; /* Remove hover effect on touch devices */
+    }
+    
+    .rock:active,
+    .paper:active,
+    .scissor:active {
+        box-shadow: 0 0 0 5px #003a66; /* Add active state for touch devices */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .heading {
+        padding: 0.5rem;
+    }
+    
+    .content {
+        min-height: 35vh;
+        gap: 1rem;
+    }
+    
+    .score-board {
+        gap: 2rem;
+    }
+}
+
+/* Landscape mode adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .heading {
+        min-height: 15vh;
+    }
+    
+    .content {
+        min-height: 45vh;
+    }
+    
+    .msg-container {
+        min-height: 20vh;
+    }
 }
